@@ -1,0 +1,187 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NotesTool</title>
+
+
+
+    <!-- Meta Targets -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <link rel="shortcut icon" href="{% static 'imgs/NotesTool-Icon.ico' %}" type="image/x-icon">
+
+</head>
+
+
+
+<body>
+    
+    <!-- Title Div -->
+    <div class = 'title_div'>
+
+        <!-- <h1 class="title">NotesTool</h1> -->
+        <img src="../static/imgs/NotesTool Icon.svg" alt="NotesTool Icon" class='icon'>
+
+    </div>
+
+
+<header>
+
+    <div class="vertical_div">
+
+        <!-- New Note Div -->
+        <div class="new_note_div">
+            
+            <div class="new_note_title_div">
+
+                <h2 class="sub_title">New Note</h2>
+
+            </div>
+
+            <div class="new_note_input_div">
+
+                <form action="" method="post" class = form_div>
+                    {% csrf_token %}
+
+                    <input type="text" name="title_field" id="title_input" placeholder="Type a title Note..." class = 'title_input' maxlength=150 minlength = 1 required>
+                
+
+                    <textarea type="text" name="description_field" id="description_input" placeholder="Type a description Note..." class="description_input"></textarea>
+
+
+                    <div class="button_new_task_div">
+
+                        <input type="submit" value="Create Note" class="send_button">
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+
+        <!-- Pomodoro Div -->
+
+        <div class="pomodoro_div">
+
+            <div class="pomodoro_title_div">
+
+                <h2 class="sub_title">Pomodoro</h2>
+
+            </div>
+
+            <div class="comming_soon">
+                <p class = 'sub_title cs'>Comming Soon...</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- List of Notes -->
+
+    <div class="notes_div">
+
+        <div class="title_notes_div">
+            <h2 class="sub_title notes_title">Notes</h2>
+        </div>
+
+
+        <div class="notes_list">
+
+            {% for note in notes %}
+            <div class="note_div_for">
+
+                <div class="text_content_div">
+                    <h3 class = 'note_title note_title_{{note.id}}'>{{note.note_Title}}</h3>
+
+                    <div class="description_div">
+
+                        <p class = 'notes_description notes_description_{{note.id}}'>{{note.note_description}}</p>
+
+                        {% if note.finished_note == True %}
+
+                            <style>
+                                .notes_description_{{note.id}} {
+                                    text-decoration: line-through;
+                                }
+
+                                .note_title_{{note.id}} {
+                                    text-decoration: line-through;
+                                }
+
+                            </style>
+
+                        {% else %}
+
+                            <style>
+                                .notes_description_{{note.id}} {
+                                    text-decoration: none;
+                                }
+
+                                
+                                .note_title_{{note.id}} {
+                                    text-decoration: none;
+                                }
+                            </style>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <div class="options_div">
+                    <form action="mark/{{note.id}}/" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="" name="complete_task" id = 'complete' class = 'cbox {{note.id}}'>
+                    </form>
+
+
+                    <form action="delete/{{note.id}}/" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="" name="delete_task" id = 'delete' class = 'bbox {{note.id}}'>
+                    </form>
+
+                    <form action="edit/{{note.id}}/" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="" name="edit_task" id = 'edit' class = 'ebox {{note.id}}'>
+                    </form>
+
+                </div>
+            </div>
+            {% endfor %}
+
+            
+
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<footer>
+
+    <p>This program is under development, therefore, any error can be reported on my discord: ! F e r d#1274</p>
+
+</footer>
+
+</body>
+</html>

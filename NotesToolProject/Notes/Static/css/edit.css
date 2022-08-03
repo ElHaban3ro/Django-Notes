@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    /* background-image: url('../imgs/wallpaper_2.svg'); */
+    /* background: rgb(0, 24, 28); */
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    background: rgb(0,80,67);
+    background: -moz-radial-gradient(circle, rgba(0,80,67,1) 0%, rgb(0, 16, 13) 100%);
+    background: -webkit-radial-gradient(circle, rgba(0,80,67,1) 0%, rgb(0, 16, 13) 100%);
+    background: radial-gradient(circle, rgba(0,80,67,1) 0%, rgb(0, 16, 13) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#005043",endColorstr="#001c17",GradientType=1);
+}
+
+
+header {
+
+    display: flex;
+    margin-top: 20px;
+    width: 90%;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+
+    height: 700px;
+}
+
+
+
+h1 {
+    font-family: 'FuturaCndObl-Bo Regular';
+    src: url('../fonts/FuturaCndObl-Bo Regular.ttf') format(truetype);
+    color: white;
+    font-size: 35px;
+
+    font-weight: 1;
+    letter-spacing: 5px;
+}
+
+
+.icon {
+
+    width: 45px;
+    cursor: pointer;
+    user-select: none;
+    margin-left: 50px;
+}
+
+
+
+
+.sub_title {
+    font-family: 'FuturaCndObl-Bo Regular';
+    src: url('../fonts/FuturaCndObl-Bo Regular.ttf') format(truetype);
+    color: white;
+    font-size: 23px;
+
+    font-weight: 5;
+}
+
+
+
+
+.title_div {
+    background: rgb(14, 67, 77);
+
+    display: flex;
+    width: 100%;
+    height: 60px;
+    /* margin-top: 10px; */
+    /* border-radius: 30px; */
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    user-select: none;
+
+}
+
+
+
+
+
+.vertical_div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+/* EDIT NOTES NOTES */
+
+.new_note_div {
+    width: 600px;
+    height: 350px;
+    border-radius: 30px;
+
+    background: rgb(0,80,67);
+    background: -moz-radial-gradient(circle, rgba(0,80,67,1) 0%, rgb(0, 16, 13) 100%);
+    background: -webkit-radial-gradient(circle, rgba(0,80,67,1) 0%, rgb(0, 16, 13) 100%);
+    background: radial-gradient(circle, rgba(0,80,67,1) 0%, rgb(0, 16, 13) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#005043",endColorstr="#001c17",GradientType=1);
+
+
+    border: 1px rgb(0, 16, 13) solid;
+
+}
+
+
+.new_note_title_div {
+    height: 60px;
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
+    user-select: none;
+}
+
+
+.new_note_input_div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+}
+
+
+.title_input, .description_input {
+    width: 100%;
+    border: none;
+
+    background: #d6efed;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+
+    border: 1px rgb(0, 16, 13) solid;
+    font-size: 15px;
+}
+
+
+.title_input:focus, .description_input:focus {
+    outline: none;
+    border: 1px #66737a solid;
+
+}
+
+
+
+.title_input {
+    padding: 10px 15px;
+    border-radius: 15px;
+}
+
+
+
+
+.description_input {
+    margin-top: 10px;
+    border-radius: 20px;
+
+
+
+    height: 120px;
+    padding: 20px 15px;
+    resize: none;
+}
+
+
+
+.button_new_task_div {
+    width: 100%;
+
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+
+.send_button {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 800;
+    border: none;
+
+    border-radius: 15px;
+
+
+    background: #cecad0;
+    color: #6a616e;
+}
+
+
+.send_button:hover {
+    background: #fffeff;
+    color: #322d34;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    background-color: #000c04;
+    width: 100%;
+    height: 150px;
+}
+
+
+footer p {
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1285px) {
+
+        
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        height: 700px;
+        padding-bottom: 100px;
+    }
+
+
+    .notes_div {
+        width: 600px;
+        margin-top: 40px;
+    }
+    
+    footer p {
+
+        width: 400px;
+        text-align: center;
+        font-size: 15px;
+    }
+}
+
+
+
+@media screen and (max-width: 705px) {
+
+
+    .vertical_div {
+        width: 100%;
+    }
+
+    .new_note_div {
+        width: 100%;
+    }
+
+
+    .notes_div {
+        width: 100%;
+    }
+    
+    .title_div {
+        width: 100%;
+        height: 80px;
+    }
+
+
+    header {
+        height: 400px;
+    }
+
+    
+    footer p {
+
+        width: 200px;
+        text-align: center;
+        font-size: 10px;
+    }
+}
+
+
+
+@media screen and (max-width: 585px) {
+
+    
+    .notes_description {
+        width: 300px;
+        height: 50px;
+
+        font-size: 20px;
+    }
+
+        
+    .note_div_for {
+        margin: 10px 0;
+        padding: 25px 10px;
+        height: 100px;
+    }
+}

@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NotesTool - Editing Task {{ id }} </title>
+
+
+
+    <!-- Meta Targets -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}">
+
+    <link rel="shortcut icon" href="{% static 'imgs/NotesTool-Icon.ico' %}" type="image/x-icon">
+
+</head>
+
+
+
+<body>
+    
+    <!-- Title Div -->
+    <div class = 'title_div'>
+
+        <!-- <h1 class="title">NotesTool</h1> -->
+        <a href={% url 'homeget' %}><img src={% static 'imgs/NotesTool Icon.svg' %} alt="NotesTool Icon" class='icon'></a>
+
+    </div>
+
+
+<header>
+
+    <div class="vertical_div">
+
+        <!-- New Note Div -->
+        <div class="new_note_div">
+            
+            <div class="new_note_title_div">
+
+                <h2 class="sub_title">Edit Note</h2>
+
+            </div>
+
+            <div class="new_note_input_div">
+
+                <form action="/notes/redit/{{id}}/" method="post" class = form_div>
+                    {% csrf_token %}
+
+                    <input type="text" maxlength=150 name="title_field" id="title_input" placeholder="Type a title Note..." class = 'title_input' value = '{{title_field}}' required>
+                
+
+                    <textarea type="text" name="description_field" id="description_input" placeholder="Type a description Note..." class="description_input">{{description_field}}</textarea>
+
+
+                    <div class="button_new_task_div">
+
+                        <input type="submit" value="Update Note" class="send_button">
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    </div>
+
+</header>
+
+
+<footer>
+
+    <p>This program is under development, therefore, any error can be reported on my discord: ! F e r d#1274</p>
+
+</footer>
+
+</body>
+</html>
